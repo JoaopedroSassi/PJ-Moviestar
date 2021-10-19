@@ -1,3 +1,8 @@
+<?php
+   include_once ('globals.php');
+   include_once ('connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
