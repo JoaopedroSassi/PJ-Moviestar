@@ -1,5 +1,4 @@
 ﻿# PJ - Moviestar
- ﻿# PJ - Agenda
  Este projeto é uma rede social quase completa. O objeto de estudo aqui é a conexão de PHP + BD, PHP e a WEB, Regras de negócio complexas e múltiplas integrações. Este projeto se trata da seção 19 do curso PHP: Do zero a Maestria
 
  ## Como está o projeto?
