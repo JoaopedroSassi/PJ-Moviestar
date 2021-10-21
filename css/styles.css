@@ -62,7 +62,7 @@
 #main-container{
   background-color: #000;
   color: #FFF;
-  min-height: calc(100vh - 70px);
+  min-height: calc(65vh + 48px);
   padding: 40px 20px;
 }
 
