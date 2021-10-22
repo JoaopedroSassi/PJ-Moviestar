@@ -3,7 +3,7 @@
 ?>
 
    <div id="main-container" class="container-fluid">
-      <h1>Index</h1>
+      <h1>Autenticção</h1>
    </div>
 
 <?php
