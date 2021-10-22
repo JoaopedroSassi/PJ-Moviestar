@@ -11,11 +11,11 @@
                   <input type="hidden" name="type" value="login">
                   <div class="form-group">
                      <label for="email">E-mail:</label>
-                     <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail">
+                     <input type="email" class="form-control" id="email-login" name="email" placeholder="Digite seu e-mail">
                   </div>
                   <div class="form-group">
                      <label for="password">Senha:</label>
-                     <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha">
+                     <input type="password" class="form-control" id="password-login" name="password" placeholder="Digite sua senha">
                   </div>
                   <input type="submit" class="btn card-btn" value="Entrar">
                </form>
@@ -23,11 +23,11 @@
 
             <div class="col-md-4" id="register-container">
                <h2>Criar conta</h2>
-               <form action="" method="POST">
+               <form action="<?= $BASE_URL ?>auth_process.php" method="POST">
                   <input type="hidden" name="type" value="register">
                   <div class="form-group">
                      <label for="email">E-mail:</label>
-                     <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail">
+                     <input type="email" class="form-control" id="email-register" name="email" placeholder="Digite seu e-mail">
                   </div>
                   <div class="form-group">
                      <label for="nome">Nome:</label>
@@ -39,11 +39,11 @@
                   </div>
                   <div class="form-group">
                      <label for="password">Senha:</label>
-                     <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha">
+                     <input type="password" class="form-control" id="password-register" name="password" placeholder="Digite sua senha">
                   </div>
                   <div class="form-group">
-                     <label for="conf_password">Confirmação de senha:</label>
-                     <input type="password" class="form-control" id="conf_password" name="conf_password" placeholder="Confirme sua senha">
+                     <label for="confpassword">Confirmação de senha:</label>
+                     <input type="password" class="form-control" id="confpassword" name="confpassword" placeholder="Confirme sua senha">
                   </div>
                   <input type="submit" class="btn card-btn" value="Registrar">
                </form>
