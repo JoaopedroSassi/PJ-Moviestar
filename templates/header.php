@@ -1,6 +1,8 @@
 <?php
    include_once ('globals.php');
    include_once ('connection.php');
+
+   $flash_message = [];
 ?>
 
 <!DOCTYPE html>
@@ -43,3 +45,8 @@
          </div>
       </nav>
    </header>
+   <?php if(!empty($flash_message['msg'])): ?>  
+      <div class="msg-container">
+         <p class="msg <?= $flash_message['type'] ?> ">T<?= $flash_message['msg'] ?></p>
+      </div>
+   <?php endif; ?>
