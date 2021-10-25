@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3312
--- Tempo de geração: 20-Out-2021 às 00:28
+-- Tempo de geração: 25-Out-2021 às 22:56
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.10
 
@@ -64,6 +64,7 @@ CREATE TABLE `users` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `last_name` varchar(100) DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
   `password` varchar(200) DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
   `token` varchar(200) DEFAULT NULL,
