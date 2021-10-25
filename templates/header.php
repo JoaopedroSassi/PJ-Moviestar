@@ -1,7 +1,8 @@
 <?php
-   include_once ('globals.php');
-   include_once ('connection.php');
-   include_once ('models/msg.php');
+   require_once ('globals.php');
+   require_once ('connection.php');
+   require_once ('models/msg.php');
+   require_once ('dao/userDAO.php');
 
    $message = new message($BASE_URL);
 
