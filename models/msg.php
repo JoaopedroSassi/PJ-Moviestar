@@ -10,7 +10,7 @@
       public function setMessage($msg, $type, $redirect = "index.php"){
 
          $_SESSION['msg'] = $msg;
-         $_SESSIon['type'] = $type;
+         $_SESSION['type'] = $type;
 
          if ($redirect != "back") {
             header("Location: $this->url" . $redirect);
