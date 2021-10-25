@@ -7,6 +7,7 @@
    require_once('dao/userDAO.php');
 
    $message = new message($BASE_URL);
+   $userDao = new UserDAO($conn, $BASE_URL);
 
    $type = filter_input(INPUT_POST, "type");
 
@@ -19,14 +20,30 @@
       $confpassword = filter_input(INPUT_POST, "confpassword");
 
       if (!$name || !$lastname || !$email || !$password) {
-         
          $message->setMessage("Por favor, preencha todos os campos", "error", "back");
-
       } else {
          if ($password != $confpassword) {
             $message->setMessage("Senhas não conferem!", "error", "back");
          } else {
+            if ($userDao->findByEmail($email) === false) {
 
+               $user = new user();
+
+               $user_token = $user->generateToken();
+               $final_password = $user->generatePassword($password);
+
+               $user->name = $name;
+               $user->email = $email;
+               $user->lastname = $lastname;
+               $user->password = $final_password;
+               $user->token = $user_token;
+
+               $auth = true;
+
+               $userDao->create($user, $auth);
+            } else {
+               $message->setMessage("Email já cadastrado!", "error", "back");
+            }
          }
       }
 
