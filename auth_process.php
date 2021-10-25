@@ -13,7 +13,7 @@
    if ($type === "register") {
 
       $email = filter_input(INPUT_POST, "email");
-      $name = filter_input(INPUT_POST, "name");
+      $name = filter_input(INPUT_POST, "nome");
       $lastname = filter_input(INPUT_POST, "lastname");
       $password = filter_input(INPUT_POST, "password");
       $confpassword = filter_input(INPUT_POST, "confpassword");
@@ -23,10 +23,12 @@
          $message->setMessage("Por favor, preencha todos os campos", "error", "back");
 
       } else {
-         
+         if ($password != $confpassword) {
+            $message->setMessage("Senhas não conferem!", "error", "back");
+         } else {
+
+         }
       }
-
-
 
    } else if($type === "login"){
 
