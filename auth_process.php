@@ -33,8 +33,8 @@
                $final_password = $user->generatePassword($password);
 
                $user->name = $name;
-               $user->email = $email;
                $user->lastname = $lastname;
+               $user->email = $email;
                $user->password = $final_password;
                $user->token = $user_token;
 
