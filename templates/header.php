@@ -1,8 +1,16 @@
 <?php
    include_once ('globals.php');
    include_once ('connection.php');
+   include_once ('models/msg.php');
 
-   $flash_message = [];
+   $message = new message($BASE_URL);
+
+   $flash_message = $message->getMessage();
+
+   if (!empty($flash_message['msg'])) {
+      $message->clearMessage();
+   }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +55,6 @@
    </header>
    <?php if(!empty($flash_message['msg'])): ?>  
       <div class="msg-container">
-         <p class="msg <?= $flash_message['type'] ?> ">T<?= $flash_message['msg'] ?></p>
+         <p class="msg <?= $flash_message['type'] ?> "><?= $flash_message['msg'] ?></p>
       </div>
    <?php endif; ?>
