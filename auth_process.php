@@ -54,13 +54,6 @@
 
       if ($userDao->authenticateUser($email, $password)) {
          
-         $token = $user->generateToken();
-         $this->setTokenToSession($token);
-
-         $user->token = $token;
-         $this->update($user);
-
-         return true;
       } else {
          $message->setMessage("Usuário e/ou senha incorretos!", "error", "back");
       }
