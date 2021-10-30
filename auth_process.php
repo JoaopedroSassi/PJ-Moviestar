@@ -49,4 +49,22 @@
 
    } else if($type === "login"){
 
+      $email = filter_input(INPUT_POST, "email");
+      $password = filter_input(INPUT_POST, "password");
+
+      if ($userDao->authenticateUser($email, $password)) {
+         
+         $token = $user->generateToken();
+         $this->setTokenToSession($token);
+
+         $user->token = $token;
+         $this->update($user);
+
+         return true;
+      } else {
+         $message->setMessage("Usuário e/ou senha incorretos!", "error", "back");
+      }
+
+   } else {
+      $message->setMessage("Informações inválidas!", "error", "index.php");
    }
