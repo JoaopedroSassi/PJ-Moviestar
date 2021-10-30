@@ -110,10 +110,10 @@
             if (password_verify($password, $user->password)) {
                
                $token = $user->generateToken();
-               $this->setTokenToSession($token);
+               $this->setTokenToSession($token, false);
             
                $user->token = $token;
-               $this->update($user);
+               $this->update($user, false);
             
                return true;
             } else {
