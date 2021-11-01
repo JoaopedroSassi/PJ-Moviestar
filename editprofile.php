@@ -55,8 +55,8 @@
                <form action="<?=$BASE_URL ?>user_process.php" method="POST">
                   <input type="hidden" name="type" value="changepassword">
                   <div class="form-group">
-                     <label for="passoword">Senha:</label>
-                     <input type="password" class="form-control" name="passoword" id="passoword" placeholder="Digite a sua nova senha:">
+                     <label for="password">Senha:</label>
+                     <input type="password" class="form-control" name="password" id="password" placeholder="Digite a sua nova senha:">
                   </div>
                   <div class="form-group">
                      <label for="confirmpassword">Confirmação de Senha:</label>
