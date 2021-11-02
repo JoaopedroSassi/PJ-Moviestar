@@ -55,7 +55,22 @@
       }
 
       public function create(Movie $movie){
-         
+         $stmt = $this->conn->prepare
+         ("INSERT INTO movies 
+         (title, description, image, trailer, category, length, users_id) VALUES
+         (:title, :description, :image, :trailer, :category, :length, :users_id)");
+
+         $stmt->bindParam(":title", $movie->title);
+         $stmt->bindParam(":description", $movie->description);
+         $stmt->bindParam(":image", $movie->image);
+         $stmt->bindParam(":trailer", $movie->trailer);
+         $stmt->bindParam(":category", $movie->category);
+         $stmt->bindParam(":length", $movie->length);
+         $stmt->bindParam(":users_id", $movie->users_id);
+
+         $stmt->execute();
+
+         $this->message->setMessage("Filme adicionado com sucesso!", "success", "index.php");
       }
 
       public function  update(Movie $movie){
