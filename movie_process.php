@@ -42,7 +42,7 @@
 
             if (in_array($image['type'], $image_types)) {
 
-               if (in_array($image, $jpg_array)) {
+               if (in_array($image['type'], $jpg_array)) {
                   $image_file = imagecreatefromjpeg($image['tmp_name']);
                } else {
                   $image_file = imagecreatefrompng($image['tmp_name']);
