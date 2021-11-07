@@ -27,33 +27,36 @@
       $userData->email = $email;
       $userData->bio = $bio;
 
-      if (isset($_FILES['image']) && !empty($_FILES['image']['tmp_name'])){
-         
-         $image = $_FILES['image'];
-         $image_types = ['image/jpeg', 'image/jpg', 'image/png'];
-         $jpg_array = ['image/jpeg', 'image/jpg'];
-
-         if (in_array($image['type'], $image_types)) {
-            
-            if (in_array($image, $jpg_array)) {
-               
-               $image_file = imagecreatefromjpeg($image['tmp_name']);
-
-            } else {
-
-               $image_file = imagecreatefrompng($image['tmp_name']);
-
-            }
-
-            $image_name = $user->imageGenerateName();
-
-            imagejpeg($image_file, './img/users/'.$image_name, 100);
-
-            $userData->image = $image_name;
+      if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
+      
+         $image = $_FILES["image"];
+         $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+         $jpgArray = ["image/jpeg", "image/jpg"];
+   
+         if(in_array($image["type"], $imageTypes)) {
+   
+           if(in_array($image, $jpgArray)) {
+   
+             $imageFile = imagecreatefromjpeg($image["tmp_name"]);
+   
+           } else {
+   
+             $imageFile = imagecreatefrompng($image["tmp_name"]);
+   
+           }
+   
+           $imageName = $user->imageGenerateName();
+   
+           imagejpeg($imageFile, "./img/users/" . $imageName, 100);
+   
+           $userData->image = $imageName;
+   
          } else {
-            $message->setMessage("Tipo inválido de imagem. Insira PNG ou JPG!", "error", "back");
+   
+           $message->setMessage("Tipo inválido de imagem, insira png ou jpg!", "error", "back");
+   
          }
-      }
+       }
 
       $userDao->update($userData);
    } else if ($type == "changepassword") {
