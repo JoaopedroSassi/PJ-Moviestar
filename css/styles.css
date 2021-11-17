@@ -247,10 +247,11 @@
 }
 
 .movie-image-container{
-  height: 400px;
+  height: 450px;
   min-width: 200px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .page-title:after {
