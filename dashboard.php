@@ -33,7 +33,7 @@
                   <tr>
                      <td scope="row"><?= $movie->id ?></td>
                      <td><a href="<?= $BASE_URL ?>movie.php?id=<?= $movie->id ?>" class="table-movie-title"><?= $movie->title ?></a></td>
-                     <td><i class="bi bi-star"></i></td>
+                     <td><i class="bi bi-star"><?php echo $movie->rating ?></i></td>
                      <td class="actions-column">
                         <a href="<?= $BASE_URL ?>editmovie.php?id=<?= $movie->id ?>" class="edit-btn">
                            <i class="bi bi-pencil"></i> Editar
